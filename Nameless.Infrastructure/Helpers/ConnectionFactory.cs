@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using Microsoft.Extensions.Configuration;
 using Nameless.Domain.Helpers;
-using Npgsql;
+using MySqlConnector;
 
 namespace Nameless.Infrastructure.Helpers;
 
@@ -16,7 +16,7 @@ public class ConnectionFactory : IConnectionFactory
 
     public IDbConnection GetConnection()
     {
-        return new NpgsqlConnection(this._connectionString);            
+        return new MySqlConnection(this._connectionString);            
     }
 }
 
